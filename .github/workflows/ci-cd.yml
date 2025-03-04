@@ -15,13 +15,13 @@ jobs:
     steps:
       # Checkout the code
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Set up Java
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'  # Use Java 17
+          java-version: '23'  # Use Java 23
           distribution: 'temurin'
 
       # Build and run tests
@@ -31,7 +31,7 @@ jobs:
 
       # Generate and publish reports
       - name: Publish Cucumber HTML Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cucumber-report
           path: target/cucumber-reports  # Path to the Cucumber HTML report
@@ -46,7 +46,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish ExtentReports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: extent-report
           path: target/extent-reports  # Path to the ExtentReports
