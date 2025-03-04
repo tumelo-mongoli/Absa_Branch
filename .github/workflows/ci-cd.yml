@@ -76,7 +76,8 @@ jobs:
           name: cucumber-report
           path: target/cucumber-reports
           if-no-files-found: error
-
+          
+      # Generate and publish reports
       - name: Publish Allure Report
         if: always()
         uses: actions/upload-artifact@v4
