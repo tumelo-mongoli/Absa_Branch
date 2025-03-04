@@ -28,7 +28,7 @@ jobs:
       - name: Install Chrome and ChromeDriver
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip
+          sudo apt-get install -y wget unzip libxi6 libgconf-2-4 libxrandr2 libasound2 libatk1.0-0 libgtk-3-0
           wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
           echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
           sudo apt-get update
@@ -39,11 +39,23 @@ jobs:
           sudo unzip /tmp/chromedriver.zip -d /usr/local/bin/
           sudo chmod +x /usr/local/bin/chromedriver
 
-      # Verify ChromeDriver Installation
-      - name: Verify ChromeDriver Installation
+      # Verify Chrome and ChromeDriver Versions
+      - name: Verify Chrome and ChromeDriver Versions
         run: |
-          which chromedriver
+          echo "Chrome version:"
+          google-chrome --version
+          echo "ChromeDriver version:"
           chromedriver --version
+
+      # Debug Environment
+      - name: Debug Environment
+        run: |
+          echo "Java version:"
+          java -version
+          echo "Maven version:"
+          mvn -version
+          echo "Environment variables:"
+          printenv
 
       # Build and run tests
       - name: Build and run tests
