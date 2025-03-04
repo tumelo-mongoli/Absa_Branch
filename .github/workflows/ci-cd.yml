@@ -26,7 +26,7 @@ jobs:
 
       # Build and run tests
       - name: Build and run tests
-        run: mvn clean test  # For Maven
+        run: mvn -f Absa_CreateProfile/demo/pom.xml clean test  # For Maven
         # run: ./gradlew clean test  # For Gradle
 
       # Generate and publish reports
