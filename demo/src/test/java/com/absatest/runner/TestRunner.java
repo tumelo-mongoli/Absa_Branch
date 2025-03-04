@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         tags = "@CreateProfile",
         glue = "com\\absatest\\java\\StepDefinition",
         dryRun=false,
-		plugin= {"pretty", "html:target/cucumber-reports/cucumber.html"}
+		plugin= {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
 )
 
 

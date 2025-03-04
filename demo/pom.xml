@@ -124,11 +124,28 @@
     <artifactId>cucumber-java</artifactId>
     <version>7.14.0</version>
 </dependency>
+
 <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
     <version>7.14.0</version>
 </dependency>
+
+
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-cucumber7-jvm</artifactId>
+    <version>2.29.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-testng</artifactId>
+    <version>2.29.1</version>
+</dependency>
+
 
 
       <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
@@ -155,11 +172,7 @@
           <scope>test</scope>
       </dependency>
 
-      <dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-testng</artifactId>
-    <version>2.20.1</version>
-      </dependency>
+
 
 
 

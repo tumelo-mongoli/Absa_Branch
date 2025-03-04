@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Mar 04 20:35:27 SAST 2025","Tue Mar 04 20:35:42 SAST 2025","15124","","CreateProfile","","User Create a profile on the Protractor practice website","","User Create a profile on the Protractor practice website",""
