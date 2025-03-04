@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.absatest</groupId>
-  <artifactId>demo</artifactId>
+  <artifactId>Absa_CreateProfile</artifactId>
   <version>y</version>
 
-  <name>demo</name>
+  <name>Absa_CreateProfile</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

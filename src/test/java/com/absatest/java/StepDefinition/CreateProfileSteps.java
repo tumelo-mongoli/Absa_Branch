@@ -1,11 +1,11 @@
 package com.absatest.java.StepDefinition;
+
 import com.absatest.java.PageObjects.*;
 import io.cucumber.java.en.*;
 import io.qameta.allure.Allure;
 import java.io.ByteArrayInputStream;
 import java.util.Random;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
