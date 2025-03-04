@@ -95,6 +95,7 @@
 </dependency>
 
 
+
       <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
       <dependency>
           <groupId>net.masterthought</groupId>

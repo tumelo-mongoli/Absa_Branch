@@ -1,5 +1,4 @@
 package com.absatest.java.PageObjects;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -39,7 +38,7 @@ public class WebTablesPage {
     }
 
     public void clickCompanyName() {
-        driver.findElement(By.xpath("/html/body/div[2]/div[2]/form/table/tbody/tr[5]/td[2]/label[1]/input")).click();
+        driver.findElement(By.xpath("//*[text()='Customer']//../td/label[1]/input")).click();
 
     }
 
