@@ -112,7 +112,11 @@ public void user_enters_a_cell_phone_number() {
         webTablesPage.clickSaveButton();
 
     }
-
+    
+    @Then("Close Browser")
+    public void close_browser() {
+        driver.quit();
+    }
 
 
 }
