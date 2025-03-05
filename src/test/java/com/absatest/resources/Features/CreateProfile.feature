@@ -15,5 +15,6 @@ Feature: CreateProfile
     And User enters an Email Address
     And User enters a Cell Phone Number
     And Click the save button
+    And Validate the data is saved
     Then Close Browser
    

@@ -3,7 +3,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.absatest.java.Utilities.BrowserFactory;
 
 public class Hooks {
 
@@ -12,10 +13,16 @@ public class Hooks {
     @Before
     public void setUp() {
         // Set up ChromeDriver using webdriver-manager
-        WebDriverManager.chromedriver().setup();
+        // WebDriverManager.chromedriver().setup();
 
-        // Initialize the WebDriver instance
-        driver = new ChromeDriver();
+        // String browser = System.getProperty("browser", "chrome");   
+        
+        WebDriverManager.firefoxdriver().setup();
+
+        String browser = System.getProperty("browser", "firefox");   
+
+
+        driver = BrowserFactory.createDriver(browser);
     }
 
     @After

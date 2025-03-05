@@ -3,9 +3,13 @@ import com.absatest.java.Hooks.Hooks;
 import com.absatest.java.PageObjects.*;
 import io.cucumber.java.en.*;
 import io.qameta.allure.Allure;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.util.Random;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +19,9 @@ public class CreateProfileSteps {
     private WebDriver driver;
     private WebTablesPage webTablesPage;
     private String uniqueUsername;
+    private String Fname = "John";
+    private String Sname = "Moodys";
+
 
 
     public CreateProfileSteps() {
@@ -49,13 +56,13 @@ public class CreateProfileSteps {
 
     @Then("User enters a First Name")
 public void user_enters_a_first_name() {
-    webTablesPage.enterFirstName("John");
+    webTablesPage.enterFirstName(Fname);
 
 }
 
     @Then("User enters a Last Name")
         public void user_enters_a_last_name() {
-        webTablesPage.enterLastName("Testers");
+        webTablesPage.enterLastName(Sname);
 
     }
 
@@ -100,8 +107,8 @@ public void user_enters_an_email_address() {
 }
 
 
-@Then("User enters a Cell Phone Number")
-public void user_enters_a_cell_phone_number() {
+    @Then("User enters a Cell Phone Number")
+    public void user_enters_a_cell_phone_number() {
 
     webTablesPage.enterCellPhoneNUmber("0721548562");
 
@@ -112,6 +119,14 @@ public void user_enters_a_cell_phone_number() {
         webTablesPage.clickSaveButton();
 
     }
+
+    @Then("Validate the data is saved")
+    public void validate_the_data_is_saved() {
+        String name = driver.findElement(By.xpath("//td[contains(text(), '"+Fname+"')]")).getText();
+        String username = driver.findElement(By.xpath("//td[contains(text(), '"+uniqueUsername+"')]")).getText();
+        assertEquals(Fname, name);
+        assertEquals(uniqueUsername, username);
+}
     
     @Then("Close Browser")
     public void close_browser() {

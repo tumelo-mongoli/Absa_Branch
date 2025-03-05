@@ -56,3 +56,19 @@ How to setup Environment Variables
 - open cmd 
 
 - Type: mvn -version 
+
+-------
+
+Test execution:
+	- navigate to the folder where the project will be place
+	- git clone the project 
+	- open the project using vs code 
+	- on the terminal; run mvn clean install 
+	- navigate to the TestRunner.java file 
+	- run the test from that TestRunner.java class
+
+To retrieve the results:
+	- open cmd terminal as Admin
+	- navigate to the pom directory
+	- run allure generate allure-results -o allure-report --clean
+	- run allure serve allure-results
