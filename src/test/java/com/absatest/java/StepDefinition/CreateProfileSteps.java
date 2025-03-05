@@ -1,4 +1,5 @@
 package com.absatest.java.StepDefinition;
+import com.absatest.java.Hooks.Hooks;
 import com.absatest.java.PageObjects.*;
 import io.cucumber.java.en.*;
 import io.qameta.allure.Allure;
@@ -8,19 +9,22 @@ import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CreateProfileSteps {
 
     private WebDriver driver;
     private WebTablesPage webTablesPage;
     private String uniqueUsername;
-    
+
+
+    public CreateProfileSteps() {
+        // Get the WebDriver instance from Hooks
+        driver = Hooks.getDriver();
+        System.out.println("StepDefinitions initialized with driver: " + driver);
+    }
 
     @Given("User Launch Chrome Browser")
     public void user_launch_chrome_browser() {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
         webTablesPage = new WebTablesPage(driver);
     }
 
@@ -51,8 +55,7 @@ public void user_enters_a_first_name() {
 
     @Then("User enters a Last Name")
         public void user_enters_a_last_name() {
-               // Enter Last Name
-               webTablesPage.enterLastName("Testers");
+        webTablesPage.enterLastName("Testers");
 
     }
 
@@ -109,10 +112,7 @@ public void user_enters_a_cell_phone_number() {
         webTablesPage.clickSaveButton();
 
     }
-    @Then("Close Browser")
-    public void close_browser() {
-        driver.quit();
-    }
+
 
 
 }
