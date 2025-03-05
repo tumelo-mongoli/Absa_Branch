@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "27015d46-bb0e-48d8-9855-d0f9db23251c",
+		"name": "Pets Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42653536"
+	},
+	"item": [
+		{
+			"name": "Generate Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{JedJwsuboWcZDzsJCZ6At63DgHVyVmjbKa3AYS0fvG7Tqb0c3Q}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{35REA1KWqrVZhAgJuPD5RBgttdOJle4c0ohbq8c1}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.petfinder.com/v2/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"petfinder",
+						"com"
+					],
+					"path": [
+						"v2",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Generated from cURL: curl -d \"grant_type=client_credentials&client_id={JedJwsuboWcZDzsJCZ6At63DgHVyVmjbKa3AYS0fvG7Tqb0c3Q}&client_secret={35REA1KWqrVZhAgJuPD5RBgttdOJle4c0ohbq8c1}\" https://api.petfinder.com/v2/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Search & Validate",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJKZWRKd3N1Ym9XY1pEenNKQ1o2QXQ2M0RnSFZ5Vm1qYkthM0FZUzBmdkc3VHFiMGMzUSIsImp0aSI6ImIyZDcyOTJjMDFmY2U4OTk5ZjI5OTAxNTliZDM1NmM4Y2JmZmM5MzVmMmEzMmNkMTRiZWZjMjFmYTljZjY2M2Y3MzNiNzZkYWQ3ODg1MjNkIiwiaWF0IjoxNzQwNTgzODE4LCJuYmYiOjE3NDA1ODM4MTgsImV4cCI6MTc0MDU4NzQxOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mIunwTYdz8dH0-ireBZcFVTbu-xDaQ6LR6gYZiBPEWKX29WwaDmnEjbxgqTxqO32s9ykDvHJWad6E4bMzPdbcwXfIq2B9ufvfHGtjUikVQupJmCBhP1wMlb4A-Sw83mJXRZDbjLe7LmjbJI51SL8ob9GpJsCB5H6Z_mqqW41ggTHVkoPWnVLIO4IekuZhx7n5dZx0pTnIRPr88I9NaQDbtY2oHhFGBwQuO1Tc-Eoi3NXjbLtw3hAzkBzgCnw9aIVOgbB21AzLvkODDI0-e5WeY6vL98zDW5dvLIrs9AVQ-EPeep2DnpOkHcjNraWT8klBAz9BdCmYjiHOoedgJmEEQGET"
+					}
+				],
+				"url": {
+					"raw": "https://api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}\r",
+					"protocol": "https",
+					"host": [
+						"api",
+						"petfinder",
+						"com"
+					],
+					"path": [
+						"v2",
+						"{CATEGORY}",
+						"{ACTION}"
+					],
+					"query": [
+						{
+							"key": "{parameter_1}",
+							"value": "{value_1}"
+						},
+						{
+							"key": "{parameter_2}",
+							"value": "{value_2}\r"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -H \"Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJKZWRKd3N1Ym9XY1pEenNKQ1o2QXQ2M0RnSFZ5Vm1qYkthM0FZUzBmdkc3VHFiMGMzUSIsImp0aSI6ImIyZDcyOTJjMDFmY2U4OTk5ZjI5OTAxNTliZDM1NmM4Y2JmZmM5MzVmMmEzMmNkMTRiZWZjMjFmYTljZjY2M2Y3MzNiNzZkYWQ3ODg1MjNkIiwiaWF0IjoxNzQwNTgzODE4LCJuYmYiOjE3NDA1ODM4MTgsImV4cCI6MTc0MDU4NzQxOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.mIunwTYdz8dH0-ireBZcFVTbu-xDaQ6LR6gYZiBPEWKX29WwaDmnEjbxgqTxqO32s9ykDvHJWad6E4bMzPdbcwXfIq2B9ufvfHGtjUikVQupJmCBhP1wMlb4A-Sw83mJXRZDbjLe7LmjbJI51SL8ob9GpJsCB5H6Z_mqqW41ggTHVkoPWnVLIO4IekuZhx7n5dZx0pTnIRPr88I9NaQDbtY2oHhFGBwQuO1Tc-Eoi3NXjbLtw3hAzkBzgCnw9aIVOgbB21AzLvkODDI0-e5WeY6vL98zDW5dvLIrs9AVQ-EPeep2DnpOkHcjNraWT8klBAz9BdCmYjiHOoedgJmEEQ\"GET https://api.petfinder.com/v2/{CATEGORY}/{ACTION}?{parameter_1}={value_1}&{parameter_2}={value_2}\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Search for Golden Retriever",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Golden Retriever was found\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"GoldenRetriever\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "35REA1KWqrVZhAgJuPD5RBgttdOJle4c0ohbq8c1",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "JedJwsuboWcZDzsJCZ6At63DgHVyVmjbKa3AYS0fvG7Tqb0c3Q",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://api.petfinder.com",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://api.petfinder.com/v2/oauth2",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://api.petfinder.com/v2/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Testing",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.petfinder.com/v2/animals?breeds=GoldenRetriever",
+					"protocol": "https",
+					"host": [
+						"api",
+						"petfinder",
+						"com"
+					],
+					"path": [
+						"v2",
+						"animals"
+					],
+					"query": [
+						{
+							"key": "breeds",
+							"value": "GoldenRetriever"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
