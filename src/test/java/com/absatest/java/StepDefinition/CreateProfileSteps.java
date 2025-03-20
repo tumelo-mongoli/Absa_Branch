@@ -33,6 +33,8 @@ public class CreateProfileSteps {
     @Given("User Launch Chrome Browser")
     public void user_launch_chrome_browser() {
         webTablesPage = new WebTablesPage(driver);
+        driver.manage().window().maximize();
+
     }
 
     @When("User opens URL {string}")
